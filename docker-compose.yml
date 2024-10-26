@@ -1,0 +1,21 @@
+version: '3'
+services:
+  posts_project:
+    build: ./comments/
+    volumes:
+      - ./comments:/app
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+
+  comments_project:
+    build: ./posts/
+    volumes:
+      - ./posts:/app
+      - /app/node_modules
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=development

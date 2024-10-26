@@ -1,0 +1,1 @@
+console.log('Executando projeto posts rerur')
